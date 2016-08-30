@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.files = `git ls-files`.split("\n")
   s.test_files = `git ls-files -- {features,spec}/*`.split("\n")
 
-  s.homepage = 'http://github.com/dobtco/any_strong_parameter'
+  s.homepage = 'https://github.com/ajb/any_strong_parameter'
 
   s.add_dependency 'rails', '>= 4.0.0'
 
