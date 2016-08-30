@@ -33,7 +33,7 @@ RSpec.describe ActionController::Parameters do
 
   it 'implmements AnyStrongParameter' do
     permitted = params.require(:resource).permit(
-      custom_json: :*
+      custom_json: AnyStrongParameter::ANY
     )
 
     expect(permitted[:id]).to eq nil
@@ -60,7 +60,7 @@ RSpec.describe ActionController::Parameters do
         }
       }
     })
-    permitted = params.permit(:resource => [{ :custom_json => :* }])
+    permitted = params.permit(:resource => [{ :custom_json => AnyStrongParameter::ANY }])
     expect(permitted[:resource][:id]).to be_nil
     expect(permitted[:resource][:custom_json]).to_not be_nil
   end

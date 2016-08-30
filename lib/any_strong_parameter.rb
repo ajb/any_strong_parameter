@@ -10,7 +10,7 @@ module AnyStrongParameter
             filter = filter.with_indifferent_access
 
             slice(*filter.keys).each do |key, value|
-              if filter[key] == :*
+              if filter[key] == AnyStrongParameter::ANY
                 filter.delete(key)
                 params[key] = value
               end
